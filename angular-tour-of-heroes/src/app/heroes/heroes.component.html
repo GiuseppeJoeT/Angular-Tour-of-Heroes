@@ -1,0 +1,28 @@
+<!-- data binding to the hero property -->
+<!-- <p>{{ hero }}</p> -->
+<h2>My Heroes</h2>
+<ul>
+    <!-- The *ngFor is Angular's repeater directive
+    It repeats the host element (<li>) for each element in a list. -->
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+        <!-- click event binding -->
+
+        <span class="heroes">{{ hero.id }}</span> {{ hero.name }}
+    </li>
+</ul>
+
+<!-- *ngIf Directive: Conditionally includes a template based on the value of an expression. -->
+<div *ngIf="selectedHero">
+
+    <!--Show the hero object with UppercasePipe -->
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div><span>id: </span> {{ selectedHero.id }} </div>
+    <hr>
+    <!--  Two-way binding -->
+    <div>
+        <label>name: 
+            <input [(ngModel)]="selectedHero.name" placeholder="name">
+        </label>
+    </div>
+<!-- *ngIf ends -->
+</div>
