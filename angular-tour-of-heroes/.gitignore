@@ -37,7 +37,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-#e2e
-/e2e
-angular-tour-of-heroes/e2e
