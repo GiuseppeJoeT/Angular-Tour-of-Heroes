@@ -16,7 +16,7 @@ export class HeroesComponent implements OnInit {
   // component property, from mock-heroes.ts
   heroes = HEROES;
 
-  //  Refactoring the Hero class/type
+  //  When the app starts, the selectedHero is undefined by design
   selectedHero: Hero;
 
   constructor() { }
