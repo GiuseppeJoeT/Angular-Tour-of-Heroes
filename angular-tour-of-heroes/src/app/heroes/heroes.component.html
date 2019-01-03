@@ -1,28 +1,22 @@
 <!-- data binding to the hero property -->
 <!-- <p>{{ hero }}</p> -->
 <h2>My Heroes</h2>
-<ul>
+<ul class="heroes">
     <!-- The *ngFor is Angular's repeater directive
     It repeats the host element (<li>) for each element in a list. -->
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-        <!-- click event binding -->
+    <!-- Take each element (a placeholder) in the heroes array, store it in the local hero looping variable, and make it available to the templated HTML for each iteration. -->
+    <li *ngFor="let hero of heroes" 
+        [class.selected]="hero === selectedHero" 
+        (click)="onSelect(hero)">
+        
+     <!-- [class.selected]="..." -> The class binding makes it easy to add and remove a CSS class conditionally. -->
+     <!-- (click)="..." click event binding ->   -->
 
-        <span class="heroes">{{ hero.id }}</span> {{ hero.name }}
+
+        <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </li>
 </ul>
+<hr>
 
-<!-- *ngIf Directive: Conditionally includes a template based on the value of an expression. -->
-<div *ngIf="selectedHero">
-
-    <!--Show the hero object with UppercasePipe -->
-    <h2>{{ selectedHero.name | uppercase }} Details</h2>
-    <div><span>id: </span> {{ selectedHero.id }} </div>
-    <hr>
-    <!--  Two-way binding -->
-    <div>
-        <label>name: 
-            <input [(ngModel)]="selectedHero.name" placeholder="name">
-        </label>
-    </div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 <!-- *ngIf ends -->
-</div>

@@ -1,6 +1,6 @@
 /* HeroesComponent's private CSS styles */
 .selected {
-    background-color: #CFD8DC !important;
+    background-color: red !important; /* CFD8DC */
     color: white;
 }
 
