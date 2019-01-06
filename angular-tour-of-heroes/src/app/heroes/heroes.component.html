@@ -12,11 +12,11 @@
      <!-- [class.selected]="..." -> The class binding makes it easy to add and remove a CSS class conditionally. -->
      <!-- (click)="..." click event binding ->   -->
 
-
         <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </li>
 </ul>
-<hr>
 
+<hr>
+<!-- a property binding to give the parent HeroesComponent 
+    control over the child HeroDetailComponent. -->
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-<!-- *ngIf ends -->
