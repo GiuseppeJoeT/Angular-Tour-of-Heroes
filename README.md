@@ -1,5 +1,5 @@
 # Angular-Tour-of-Heroes
-The Tour of Heroes tutorial covers the fundamentals of Angular. It is one of the main tutorial in the Angular official documentation. [](https://angular.io/tutorial)
+The Tour of Heroes tutorial covers the fundamentals of Angular. It is one of the main tutorial in the Angular official documentation. [Angular Official Documentation](https://angular.io/tutorial)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
