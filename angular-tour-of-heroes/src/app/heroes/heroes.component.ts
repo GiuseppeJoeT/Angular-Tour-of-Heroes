@@ -15,12 +15,13 @@ export class HeroesComponent implements OnInit {
   // hero = 'Windstorm';
 
   // component property, from mock-heroes.ts
-  heroes = HEROES;
+  // heroes = HEROES; refactoring after adding HeroService
+  heroes: Hero[];
 
   //  When the app starts, the selectedHero is undefined by design
   selectedHero: Hero;
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
   }
