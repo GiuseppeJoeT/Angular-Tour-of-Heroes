@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+import { Observable, of, from } from 'rxjs';
+import { MessageService } from './message.service';
 
 // This marks the class as one that participates in the dependency injection system.
 @Injectable({
@@ -11,10 +13,12 @@ import { HEROES } from './mock-heroes';
 })
 export class HeroService {
 
-  constructor() { }
+  // Angular will inject the singleton MessageService into that property when it creates the HeroService.
+  constructor(private messageService: MessageService) { }
 
-  // getHeroes method returns the mock heroes
-  getHeroes(): Hero[] {
-    return HEROES;
+  getHeroes(): Observable<Hero[]> {
+    // TO DO: send the message _after_ fetching the heroes
+    this.messageService.add('HeroService: fetched heroes');
+    return of(HEROES);
   }
 }
