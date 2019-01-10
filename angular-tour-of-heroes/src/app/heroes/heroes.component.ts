@@ -21,9 +21,16 @@ export class HeroesComponent implements OnInit {
   //  When the app starts, the selectedHero is undefined by design
   selectedHero: Hero;
 
+  //  singleton instance of HeroService
   constructor(private heroService: HeroService) { }
 
+  getHeroes(): void {
+    // Observable.subscribe()
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+  }
+
   ngOnInit() {
+    this.getHeroes();
   }
 
   // Add the click event handler
