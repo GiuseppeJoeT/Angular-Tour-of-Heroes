@@ -1,0 +1,18 @@
+<!-- *ngIf Directive: Conditionally includes a template based on the value of an expression. -->
+<div *ngIf="hero">
+  <!-- When selectedHero is undefined, the ngIf removes the hero detail from the DOM -->
+
+  <!--Show the hero object with UppercasePipe -->
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span> {{ hero.id }} </div>
+  <div>
+      <label>name: 
+            <!--  Two-way binding -->
+          <input [(ngModel)]="hero.name" placeholder="name">
+      </label>
+  </div>
+  
+  <button (click)="save()">Save</button>
+
+  <button (click)="goBack()">Go back</button>
+</div>
